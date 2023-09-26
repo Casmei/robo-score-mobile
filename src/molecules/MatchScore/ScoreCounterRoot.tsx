@@ -1,17 +1,13 @@
-import { ReactNode } from "react"
-import { View } from "react-native"
-import { styles } from "./styles"
+import { ReactNode } from "react";
+import { View } from "react-native";
+import { styles } from "./styles";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
-const ScoreCounterRoot: React.FC<Props> = ({children}) => {
-  return (
-    <View style={styles.rootContainer}>
-      {children}
-    </View>
-  )
-}
+const ScoreCounterRoot: React.FC<Props> = ({ children }) => {
+  return <View style={styles.rootContainer}>{children}</View>;
+};
 
 export default ScoreCounterRoot;

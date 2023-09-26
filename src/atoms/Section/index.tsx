@@ -7,19 +7,15 @@ type Props = {
   title: string;
   children: ReactNode;
   style?: ViewStyle;
-}
+};
 
-const Section: React.FC<Props> = ({children, title, style}) => {
+const Section: React.FC<Props> = ({ children, title, style }) => {
   return (
     <View style={[styles.container, style]}>
-      <Text style={styles.title}>
-        {title}
-      </Text>
-      <Card>
-        {children}
-      </Card>
+      <Text style={styles.title}>{title}</Text>
+      <Card>{children}</Card>
     </View>
-  )
-}
+  );
+};
 
 export default Section;

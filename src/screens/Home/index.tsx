@@ -12,7 +12,6 @@ const Home = () => {
   const fetchMatchData = async () => {
     try {
       const matchesWithGroups = await MatchService.MatchesWithGroups();
-      console.table(matchesWithGroups);
       setMatches(matchesWithGroups);
     } catch (error) {
       console.error(error);
@@ -20,14 +19,14 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchMatchData()
+    fetchMatchData();
   }, []);
 
   return (
     <View style={styles.container}>
-      <MatchListSection matches={matches}/>
+      <MatchListSection matches={matches} />
     </View>
-  )
-}
+  );
+};
 
 export default Home;

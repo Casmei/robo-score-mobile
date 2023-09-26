@@ -6,4 +6,4 @@ export const ModalityItem = {
   Root: ModalityItemRoot,
   Title: ModalityItemTitle,
   Emoji: ModalityItemEmoji,
-}
+};

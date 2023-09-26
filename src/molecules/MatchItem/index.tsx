@@ -7,5 +7,5 @@ export const MatchItem = {
   Root: MatchItemRoot,
   Teams: MatchItemTeams,
   Date: MatchItemDate,
-  Icon: MatchItemIcon
-}
+  Icon: MatchItemIcon,
+};

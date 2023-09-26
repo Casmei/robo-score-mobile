@@ -6,6 +6,6 @@ const Timer = {
   Root: TimerRoot,
   Display: TimerDisplay,
   Controls: TimerControls,
-}
+};
 
 export default Timer;

@@ -3,24 +3,29 @@ import { Match as IMatch } from "../../@types/Match.interface";
 import { FlatList } from "react-native";
 
 type Props = {
-  matches:IMatch[]
-}
+  matches: IMatch[];
+};
 
-const MatchListSection: React.FC<Props>= ({matches}) => {
+const MatchListSection: React.FC<Props> = ({ matches }) => {
   return (
     <>
       <FlatList
         data={matches}
-        renderItem={({item}) => (
+        renderItem={({ item }) => (
           <MatchItem.Root match={item}>
-            <MatchItem.Teams teams={{teamOne: item.teamA.name, teamTwo: item.teamB.name}} />
+            <MatchItem.Teams
+              teams={{ teamOne: item.teamA.name, teamTwo: item.teamB.name }}
+            />
             <MatchItem.Date day={item.day} hour={item.hour} />
-            <MatchItem.Icon />
+            <MatchItem.Icon
+              teamAPoint={item.teamAScore}
+              teamBPoint={item.teamAScore}
+            />
           </MatchItem.Root>
         )}
       />
     </>
-  )
-}
+  );
+};
 
 export default MatchListSection;

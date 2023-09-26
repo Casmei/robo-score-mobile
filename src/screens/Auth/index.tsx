@@ -1,4 +1,4 @@
-import React, {useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Alert, TextInput, View } from "react-native";
 import { styles } from "./styles";
 
@@ -6,15 +6,14 @@ import Button from "../../atoms/Button";
 import { useNavigation } from "@react-navigation/native";
 
 const Auth = () => {
-  
   const navigate = useNavigation();
 
   const [inputValue, setInputValue] = useState({
-    1: '',
-    2: '',
-    3: '',
-    4: ''
-  })
+    1: "",
+    2: "",
+    3: "",
+    4: "",
+  });
 
   const validCode = process.env.EXPO_PUBLIC_API_KEY || "4242";
 
@@ -28,8 +27,8 @@ const Auth = () => {
           text: "OK",
           onPress: () => {
             clearInputs();
-          }
-        }
+          },
+        },
       ]);
     }
   };
@@ -39,7 +38,7 @@ const Auth = () => {
       1: "",
       2: "",
       3: "",
-      4: ""
+      4: "",
     });
     firstInput?.current?.clear();
     secondInput?.current?.clear();
@@ -53,22 +52,27 @@ const Auth = () => {
   const thirdInput = useRef<TextInput>(null);
   const fourthInput = useRef<TextInput>(null);
 
-
   const focusNextInput = (nextInput: React.RefObject<TextInput> | null) => {
     nextInput?.current?.focus();
   };
 
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: "row", justifyContent: "space-evenly", width: "100%"}}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          width: "100%",
+        }}
+      >
         <TextInput
           style={styles.input}
           maxLength={1}
           keyboardType="number-pad"
           ref={firstInput}
-          onChangeText={text => {
-            setInputValue({...inputValue, 1: text})
-            text ? focusNextInput(secondInput) : focusNextInput(firstInput)
+          onChangeText={(text) => {
+            setInputValue({ ...inputValue, 1: text });
+            text ? focusNextInput(secondInput) : focusNextInput(firstInput);
           }}
         />
         <TextInput
@@ -76,10 +80,10 @@ const Auth = () => {
           maxLength={1}
           keyboardType="number-pad"
           ref={secondInput}
-          onChangeText={text => {
-            setInputValue({...inputValue, 2: text})
+          onChangeText={(text) => {
+            setInputValue({ ...inputValue, 2: text });
 
-              text ? focusNextInput(thirdInput) : focusNextInput(firstInput)
+            text ? focusNextInput(thirdInput) : focusNextInput(firstInput);
           }}
         />
         <TextInput
@@ -87,9 +91,9 @@ const Auth = () => {
           maxLength={1}
           keyboardType="number-pad"
           ref={thirdInput}
-          onChangeText={text => {
-            setInputValue({...inputValue, 3: text})
-            text ? focusNextInput(fourthInput) : focusNextInput(secondInput)
+          onChangeText={(text) => {
+            setInputValue({ ...inputValue, 3: text });
+            text ? focusNextInput(fourthInput) : focusNextInput(secondInput);
           }}
         />
         <TextInput
@@ -97,24 +101,22 @@ const Auth = () => {
           maxLength={1}
           keyboardType="number-pad"
           ref={fourthInput}
-          onChangeText={text => {
-              setInputValue({...inputValue, 4: text})
-              if(!text) {
-                focusNextInput(thirdInput)
-              }
+          onChangeText={(text) => {
+            setInputValue({ ...inputValue, 4: text });
+            if (!text) {
+              focusNextInput(thirdInput);
+            }
           }}
-          
         />
       </View>
 
       <Button
-        style={{marginTop: 70}}
+        style={{ marginTop: 70 }}
         onPress={validateCode}
         title="Acessar partidas"
       />
-
     </View>
   );
-}
+};
 
 export default Auth;

@@ -10,14 +10,14 @@ const ModalityList: React.FC<Props> = ({ modalities }) => {
   return (
     <FlatList
       data={modalities}
-      renderItem={({item}) => (
+      renderItem={({ item }) => (
         <ModalityItem.Root modalityPage={item.page}>
           <ModalityItem.Title title={item.name} />
           <ModalityItem.Emoji emoji={item.emoji} />
         </ModalityItem.Root>
       )}
     />
-  )
-}
+  );
+};
 
 export default ModalityList;

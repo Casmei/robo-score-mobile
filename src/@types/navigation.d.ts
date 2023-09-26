@@ -6,6 +6,7 @@ export declare global {
       Modality: undefined;
       Home: undefined;
       Match: Match;
+      WinnerTeam: { matchId: number };
     }
   }
 }

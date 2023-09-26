@@ -8,6 +8,6 @@ const MatchScore = {
   TeamName: ScoreCounterTeamName,
   Value: ScoreCounterValue,
   Button: ScoreCounterButtons,
-}
+};
 
 export default MatchScore;
